@@ -8,7 +8,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:image_editor_pro/modules/sliders.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:image_editor_pro/modules/all_emojies.dart';
 import 'package:image_editor_pro/modules/bottombar_container.dart';
 import 'package:image_editor_pro/modules/emoji.dart';
@@ -657,7 +656,7 @@ class _ImageEditorProState extends State<ImageEditorPro> {
               ));
   }
 
-  final picker = ImagePicker();
+  // final picker = ImagePicker();
 
   void bottomsheets() {
     openbottomsheet = true;
@@ -678,8 +677,8 @@ class _ImageEditorProState extends State<ImageEditorPro> {
                   [Icon(Icons.photo_library).xIconButton(), 10.0.sizedWidth(), 'Open Gallery'.text()],
                 ).xContainer(
                   onTap: () async {
-                    var image = await picker.getImage(source: ImageSource.gallery);
-                    await loadImage(File(image.path));
+                    // var image = await picker.getImage(source: ImageSource.gallery);
+                    // await loadImage(File(image.path));
                     Navigator.pop(context);
                   },
                 ),
@@ -691,15 +690,15 @@ class _ImageEditorProState extends State<ImageEditorPro> {
                     'Open Camera'.text(),
                   ],
                 ).xContainer(onTap: () async {
-                  var image = await picker.getImage(source: ImageSource.camera);
-                  var decodedImage = await decodeImageFromList(File(image.path).readAsBytesSync());
-
-                  setState(() {
-                    height = decodedImage.height;
-                    width = decodedImage.width;
-                    _image = File(image.path);
-                  });
-                  setState(() => _controller.clear());
+                  // var image = await picker.getImage(source: ImageSource.camera);
+                  // var decodedImage = await decodeImageFromList(File(image.path).readAsBytesSync());
+                  //
+                  // setState(() {
+                  //   height = decodedImage.height;
+                  //   width = decodedImage.width;
+                  //   _image = File(image.path);
+                  // });
+                  // setState(() => _controller.clear());
                   Navigator.pop(context);
                 })
               ],
